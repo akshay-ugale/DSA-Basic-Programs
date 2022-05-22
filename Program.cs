@@ -8,20 +8,24 @@ namespace DSA_Basic_Programs
 {
     public partial class Program
     {
+        static string Problemstatement = "Please enter the problem statement";
+        static string LectureNumber = "Please enter lecture number";
+        static string AssignementNumber = "PLease enter assignemnt number";
+
         static void Main(string[] args)
         {
-            DirectoryInfo di = new DirectoryInfo(@"./");
+            DirectoryInfo di = new DirectoryInfo(@".\Programs\");
             FileInfo[] files = di.GetFiles("*.cs");
             
             Console.WriteLine("Below are the programm's, please select the corresponding number to call one");
-            int cnt = 0;
+            int cnt = 1;
             foreach (FileInfo file in files)
             {
                 Console.WriteLine(cnt.ToString("000") + " : " + file.Name);
                 cnt++;
             }
             int inputProg = Convert.ToInt32(Console.ReadLine());
-            string method = files[inputProg].Name.ToString();
+            string method = files[inputProg-1].Name.ToString();
             var methodTrimmed = method.TrimEnd(new char[] { '.', 'c', 's' });
             //string method = args[0]; // get name method
             CallMethod(methodTrimmed);
@@ -44,6 +48,14 @@ namespace DSA_Basic_Programs
                 Console.WriteLine("Error: " + ex.Message);
                 Console.ReadKey();
             }
+        }
+
+        public static void printProblemStatement(string statement, string lecture, string assignemnt){
+            string print = "Lecture : " + lecture + "\nAssignement : " + assignemnt + "\nProblem statment : \n" + statement;
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine(print);
+            Console.WriteLine("---------------------------------------------");
+
         }
 
     }

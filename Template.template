@@ -1,0 +1,18 @@
+using System;
+
+namespace DSA_Basic_Programs
+{
+    public partial class Program
+    {
+        public static void B002_Name(){
+            Problemstatement = "Find if the given number is a prime number or Not";
+            LectureNumber = "One";
+            AssignementNumber = "one";
+            printProblemStatement(Problemstatement,LectureNumber,AssignementNumber);
+
+            Console.WriteLine("Enter the number to check if its prime");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+        }
+    }
+}

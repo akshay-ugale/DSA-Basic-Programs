@@ -23,13 +23,11 @@ namespace DSA_Basic_Programs
             int binaryRepresentation = 0;
             int p = 0;
             while(n > 0){
-                binaryRepresentation = (n%2)* (int)Math.Pow(10,p) + binaryRepresentation;
+                binaryRepresentation += (n%2)* (int)Math.Pow(10,p);
                 n = n/2;
                 p++;
             }
             Console.WriteLine(binaryRepresentation);
-
-            
         }
     }
 }
